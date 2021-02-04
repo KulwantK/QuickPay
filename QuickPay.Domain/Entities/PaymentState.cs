@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QuickPay.Domain.Entities
+﻿namespace QuickPay.Domain.Entities
 {
-    class PaymentState
+    class PaymentState:BaseEntity
     {
+
     }
 }

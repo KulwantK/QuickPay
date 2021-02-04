@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{1A9491F2-A83D-4029-AD6F-0602477CC026}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EfCore", "EfCore", "{1A9491F2-A83D-4029-AD6F-0602477CC026}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{93316939-907C-4959-80EE-56499C720953}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{AB95F6EB-7523-452D-9F4A-8E8C8643B646}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickPay.Domain", "QuickPay.Domain\QuickPay.Domain.csproj", "{060BBD8D-0798-4687-AFD4-6E1C54751864}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickPay.Dal", "QuickPay.Data\QuickPay.Dal.csproj", "{57618D4B-7BEE-445F-8980-5CF314CAE51D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickPay.Data", "QuickPay.Data\QuickPay.Data.csproj", "{57618D4B-7BEE-445F-8980-5CF314CAE51D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickPay.EfRepository", "QuickPay.Repository\QuickPay.EfRepository.csproj", "{CCD0F392-E648-4125-9F84-DE2ED0CAC6C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickPay.Repository", "QuickPay.Repository\QuickPay.Repository.csproj", "{CCD0F392-E648-4125-9F84-DE2ED0CAC6C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickPay.Domain", "QuickPay.Domain\QuickPay.Domain.csproj", "{19BF8D5A-24A5-416C-98FC-4DB98D1E33B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{060BBD8D-0798-4687-AFD4-6E1C54751864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{060BBD8D-0798-4687-AFD4-6E1C54751864}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{060BBD8D-0798-4687-AFD4-6E1C54751864}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{060BBD8D-0798-4687-AFD4-6E1C54751864}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57618D4B-7BEE-445F-8980-5CF314CAE51D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{57618D4B-7BEE-445F-8980-5CF314CAE51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57618D4B-7BEE-445F-8980-5CF314CAE51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,14 +29,18 @@ Global
 		{CCD0F392-E648-4125-9F84-DE2ED0CAC6C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCD0F392-E648-4125-9F84-DE2ED0CAC6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCD0F392-E648-4125-9F84-DE2ED0CAC6C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BF8D5A-24A5-416C-98FC-4DB98D1E33B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BF8D5A-24A5-416C-98FC-4DB98D1E33B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BF8D5A-24A5-416C-98FC-4DB98D1E33B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BF8D5A-24A5-416C-98FC-4DB98D1E33B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{060BBD8D-0798-4687-AFD4-6E1C54751864} = {1A9491F2-A83D-4029-AD6F-0602477CC026}
 		{57618D4B-7BEE-445F-8980-5CF314CAE51D} = {1A9491F2-A83D-4029-AD6F-0602477CC026}
 		{CCD0F392-E648-4125-9F84-DE2ED0CAC6C0} = {1A9491F2-A83D-4029-AD6F-0602477CC026}
+		{19BF8D5A-24A5-416C-98FC-4DB98D1E33B1} = {1A9491F2-A83D-4029-AD6F-0602477CC026}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4F366AC-9C09-49A7-9247-F91A25924D26}
