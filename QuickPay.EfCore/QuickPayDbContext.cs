@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace QuickPay.Dal
+namespace QuickPay.EfCore
 {
-    public class QuickPaydbContext:DbContext
+    public class QuickPayDbContext : DbContext
     {
-        public QuickPaydbContext(DbContextOptions<QuickPaydbContext> options):base(options){}
+        public QuickPayDbContext(DbContextOptions<QuickPayDbContext> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

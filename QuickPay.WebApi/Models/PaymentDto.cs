@@ -1,16 +1,15 @@
 ﻿using QuickPay.Common.Constants;
 using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace QuickPay.Domain.Entities
+namespace QuickPay.WebApi.Models
 {
-    public class Payment:BaseEntity
+    public class PaymentDto
     {
-        [RegularExpression(@"^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$")]
+        public long Id { get; set; }
         public string CreditCardNumber { get; set; }
         public string CardHolder { get; set; }
         public DateTime ExpirationDate { get; set; }
-        [StringLength(3)]
+        
         public string SecurityCode { get; set; }
         public decimal Amount { get; set; }
         public PaymentState PaymentState { get; set; }

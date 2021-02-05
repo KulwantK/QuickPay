@@ -1,5 +1,4 @@
-﻿using QuickPay.EfRepository;
-using System;
+﻿using System;
 
 namespace QuickPay.Domain.Entities
 {

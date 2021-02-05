@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace QuickPay.EfRepository
+namespace QuickPay.Domain.Entities
 {
     public interface IEntity
     {
