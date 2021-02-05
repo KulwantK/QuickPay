@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using QuickPay.Repository.Extensions;
 using QuickPay.WebApi.Extensions;
 using QuickPay.WebApi.IService;
 using QuickPay.WebApi.Service;
@@ -26,7 +27,8 @@ namespace QuickPay.WebApi
 
             services.AddControllers();
             services.AddAutoMapper(typeof(AutoMappingProfile));
-            services.AddScoped<IPaymentProcessService, PaymentProcessService>();
+            services.AddEntityFrameWork(Configuration);
+            services.AddEntityService();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuickPay.WebApi", Version = "v1" });

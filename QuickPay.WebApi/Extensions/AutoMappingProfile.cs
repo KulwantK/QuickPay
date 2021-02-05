@@ -1,9 +1,6 @@
 ﻿using AutoMapper;
+using QuickPay.Domain.Entities;
 using QuickPay.WebApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace QuickPay.WebApi.Extensions
 {
@@ -12,6 +9,7 @@ namespace QuickPay.WebApi.Extensions
         public AutoMappingProfile()
         {
             CreateMap<PaymentResponseModel, PaymentDto>().ReverseMap();
+            CreateMap<Payment, PaymentDto>().ReverseMap();
         }
     }
 }

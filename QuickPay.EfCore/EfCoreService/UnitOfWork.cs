@@ -6,20 +6,20 @@ namespace QuickPay.EfCore.EfCoreService
 {
     public class UnitOfWork<TEntity> : IUnitOfWork<TEntity> where TEntity : class, IEntity
     {
-        public IEfCorDbService<TEntity> Table { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        private readonly QuickPayDbContext dbContext;
+        public IEfCoreDbService<TEntity> Table { get ; set ; }
         public UnitOfWork(QuickPayDbContext dbContext)
         {
-            Table = new EfCorDbService<TEntity>(dbContext);
+            this.dbContext = dbContext;
+            Table = new EfCoreDbService<TEntity>(dbContext);
         }
-
-        public Task Commit()
+        public async Task Commit()
         {
-            throw new System.NotImplementedException();
+            await dbContext.SaveChangesAsync();
         }
-
         public void Dispose()
         {
-            throw new System.NotImplementedException();
+            dbContext.Dispose();
         }
     }
 }

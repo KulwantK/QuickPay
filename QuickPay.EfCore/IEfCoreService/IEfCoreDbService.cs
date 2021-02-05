@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuickPay.EfCore.IEfCoreService
 {
-    public interface IEfCorDbService<TEntity> where TEntity : class, IEntity
+    public interface IEfCoreDbService<TEntity> where TEntity : class, IEntity
     {
         Task Add(TEntity entity);
         Task Add(IEnumerable<TEntity> entities);

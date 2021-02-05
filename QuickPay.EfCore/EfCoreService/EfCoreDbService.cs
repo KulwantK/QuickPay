@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace QuickPay.EfCore.EfCoreService
 {
-    public class EfCorDbService<TEntity> : IEfCorDbService<TEntity> where TEntity : class, IEntity
+    public class EfCoreDbService<TEntity> : IEfCoreDbService<TEntity> where TEntity : class, IEntity
     {
         private readonly DbSet<TEntity> Table;
         
-        public EfCorDbService(QuickPayDbContext dbContext)
+        public EfCoreDbService(QuickPayDbContext dbContext)
         {
             Table = dbContext.Set<TEntity>();
         }

@@ -1,4 +1,7 @@
-﻿using QuickPay.WebApi.IService;
+﻿using AutoMapper;
+using QuickPay.Domain.Entities;
+using QuickPay.Repository.IRepository;
+using QuickPay.WebApi.IService;
 using QuickPay.WebApi.Models;
 using System;
 using System.Linq;
@@ -8,9 +11,12 @@ namespace QuickPay.WebApi.Service
 {
     public class PaymentProcessService : IPaymentProcessService
     {
-        public PaymentProcessService()
+        private readonly IRepositoryService<Payment> repositoryService;
+        private readonly IMapper mapper;
+        public PaymentProcessService(IRepositoryService<Payment> repositoryService,IMapper mapper)
         {
-
+            this.repositoryService = repositoryService;
+            this.mapper = mapper;
         }
         public bool IsValidRequest(PaymentResponseModel paymentResponse)
         {
@@ -33,9 +39,10 @@ namespace QuickPay.WebApi.Service
             return paymentResponse.Errors.Any();
         }
 
-        public Task<PaymentResponseModel> ProcessPayment(PaymentDto payemntDto)
+        public async Task<PaymentResponseModel> ProcessPayment(PaymentDto payemntDto)
         {
-            throw new NotImplementedException();
+
+            return mapper.Map<PaymentResponseModel>(payemntDto);
         }
     }
 }

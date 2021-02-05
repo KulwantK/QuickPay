@@ -13,7 +13,7 @@ namespace QuickPay.WebApi.Controllers
     {
         private readonly IPaymentProcessService processService;
         private readonly IMapper mapper;
-        public PaymentProcessingApiController(IPaymentProcessService processService,IMapper mapper)
+        public PaymentProcessingApiController(IPaymentProcessService processService, IMapper mapper)
         {
             this.processService = processService;
             this.mapper = mapper;
@@ -40,6 +40,11 @@ namespace QuickPay.WebApi.Controllers
                 responseModel.Success = false;
                 return StatusCode(StatusCodes.Status500InternalServerError, responseModel);
             }
+        }
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            return StatusCode(StatusCodes.Status200OK, processService);
         }
     }
 }
