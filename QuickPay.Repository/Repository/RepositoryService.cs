@@ -18,12 +18,12 @@ namespace QuickPay.Repository.Repository
         public async Task Add(TEntity entity)
         {
             await unitOfWork.Table.Add(entity);
-            await unitOfWork.Commit();
+            await unitOfWork.CommitAsync();
         }
         public async Task Add(IEnumerable<TEntity> entities)
         {
             await unitOfWork.Table.Add(entities);
-            await unitOfWork.Commit();
+            await unitOfWork.CommitAsync();
         }
         public async Task<IList<TEntity>> All()
         {

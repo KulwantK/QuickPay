@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using System.Reflection;
 
 namespace QuickPay.EfCore
@@ -13,6 +14,16 @@ namespace QuickPay.EfCore
             //Seed Data
 
             modelBuilder.Seed();
+        }
+    }
+    public class DesignTimeDBContextFactory : IDesignTimeDbContextFactory<QuickPayDbContext>
+    {
+        public QuickPayDbContext CreateDbContext(string[] args)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<QuickPayDbContext>();
+            optionsBuilder.UseSqlServer("Server=IN-DT-16962\\SQL2019;Database=QuickPay;User Id=civica; password=civica");
+
+            return new QuickPayDbContext(optionsBuilder.Options);
         }
     }
 }

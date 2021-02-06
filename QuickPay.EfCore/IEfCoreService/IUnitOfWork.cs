@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 namespace QuickPay.EfCore.IEfCoreService
 {
 
-    public interface IUnitOfWork<TType> : IDisposable where TType : class, IEntity
+    public interface IUnitOfWork<TEntity> : IDisposable where TEntity : class, IEntity
     {
-        IEfCoreDbService<TType> Table { get; set; }
-        Task Commit();
+        IEfCoreDbService<TEntity> Table { get; set; }
+        Task CommitAsync();
+        void Commit();
     }
 
 }

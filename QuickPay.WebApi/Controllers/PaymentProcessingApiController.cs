@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuickPay.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/QuickPay")]
     [ApiController]
     public class PaymentProcessingApiController : ControllerBase
     {
@@ -44,7 +44,8 @@ namespace QuickPay.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return StatusCode(StatusCodes.Status200OK, processService);
+            PaymentDto payemntDto = new PaymentDto();
+            return StatusCode(StatusCodes.Status200OK, await processService.ProcessPayment(payemntDto));
         }
     }
 }

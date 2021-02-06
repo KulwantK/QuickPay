@@ -13,9 +13,13 @@ namespace QuickPay.EfCore.EfCoreService
             this.dbContext = dbContext;
             Table = new EfCoreDbService<TEntity>(dbContext);
         }
-        public async Task Commit()
+        public async Task CommitAsync()
         {
             await dbContext.SaveChangesAsync();
+        }
+        public void Commit()
+        {
+            dbContext.SaveChanges();
         }
         public void Dispose()
         {

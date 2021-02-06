@@ -15,7 +15,7 @@ namespace QuickPay.Repository.Extensions
         {
             services.AddDbContext<QuickPayDbContext>(option => option.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped(typeof(IEfCoreDbService<>), typeof(EfCoreDbService<>));
-            services.AddScoped(typeof(UnitOfWork<>), typeof(UnitOfWork<>));
+            services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
             services.AddScoped(typeof(IRepositoryService<>), typeof(RepositoryService<>));
             return services;
         }
