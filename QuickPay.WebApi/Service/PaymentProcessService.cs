@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using QuickPay.Common.Constants;
 using QuickPay.Domain.Entities;
 using QuickPay.Repository.IRepository;
 using QuickPay.WebApi.IService;
@@ -41,25 +43,25 @@ namespace QuickPay.WebApi.Service
 
         public async Task<PaymentResponseModel> ProcessPayment(PaymentDto payemntDto)
         {
-            repositoryService.Update
-                (
-                new Payment
-                {
-                    Id = 2,
-                    CreditCardNumber = "12-12-12-12",
-                    ExpirationDate = DateTime.Now.AddDays(100),
-                    SecurityCode = "123",
-                    Amount = 123.321M,
-                    CardHolder = "Updated Card Holder 123",
-                    PaymentState = Common.Constants.PaymentState.Processed
-                });
+            //repositoryService.Update
+            //    (
+            //    new Payment
+            //    {
+            //        Id = 2,
+            //        CreditCardNumber = "12-12-12-12",
+            //        ExpirationDate = DateTime.Now.AddDays(100),
+            //        SecurityCode = "123",
+            //        Amount = 123.321M,
+            //        CardHolder = "Updated Card Holder 123",
+            //        PaymentState = new PaymentState { Id = 1, PaymentId = 1, Status = PaymentStatus.Processed }
+            //    });
 
 
             var result = await repositoryService.All();
 
             var result1 = await repositoryService.Where(x => x.Id == 2);
 
-
+            var test = repositoryService.Table;
             //var result =mapper.Map<PaymentDto>(await repositoryService.All());
             return mapper.Map<PaymentResponseModel>(new PaymentResponseModel());
         }

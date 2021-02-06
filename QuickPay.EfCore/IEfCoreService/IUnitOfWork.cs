@@ -7,7 +7,7 @@ namespace QuickPay.EfCore.IEfCoreService
 
     public interface IUnitOfWork<TEntity> : IDisposable where TEntity : class, IEntity
     {
-        IEfCoreDbService<TEntity> Table { get; set; }
+        IEfCoreDbService<TEntity> DbEntity { get; set; }
         Task CommitAsync();
         void Commit();
     }

@@ -7,11 +7,11 @@ namespace QuickPay.EfCore.EfCoreService
     public class UnitOfWork<TEntity> : IUnitOfWork<TEntity> where TEntity : class, IEntity
     {
         private readonly QuickPayDbContext dbContext;
-        public IEfCoreDbService<TEntity> Table { get ; set ; }
+        public IEfCoreDbService<TEntity> DbEntity { get ; set ; }
         public UnitOfWork(QuickPayDbContext dbContext)
         {
             this.dbContext = dbContext;
-            Table = new EfCoreDbService<TEntity>(dbContext);
+            DbEntity = new EfCoreDbService<TEntity>(dbContext);
         }
         public async Task CommitAsync()
         {

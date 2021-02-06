@@ -1,6 +1,7 @@
 ﻿using QuickPay.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -14,5 +15,6 @@ namespace QuickPay.EfCore.IEfCoreService
         Task<TEntity> GetById(long id);
         Task<IEnumerable<TEntity>> Where(Expression<Func<TEntity, bool>> expression);
         void Update(TEntity entity);
+        IQueryable<TEntity> Table { get; }
     }
 }
