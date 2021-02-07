@@ -16,9 +16,8 @@ namespace QuickPay.EfCore.Migrations
                     CreditCardNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CardHolder = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ExpirationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SecurityCode = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: true),
+                    SecurityCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    StateId = table.Column<long>(type: "bigint", nullable: false),
                     CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -38,7 +37,7 @@ namespace QuickPay.EfCore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PaymentStates", x => new { x.PaymentId, x.Id });
+                    table.PrimaryKey("PK_PaymentStates", x => x.Id);
                     table.ForeignKey(
                         name: "FK_PaymentStates_Payments_PaymentId",
                         column: x => x.PaymentId,
@@ -47,15 +46,11 @@ namespace QuickPay.EfCore.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Payments",
-                columns: new[] { "Id", "Amount", "CardHolder", "CreationTime", "CreditCardNumber", "ExpirationDate", "SecurityCode", "StateId" },
-                values: new object[] { 1L, 451.25m, "James Smith", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "421-4453-999-301", new DateTime(2022, 2, 7, 10, 21, 54, 464, DateTimeKind.Local).AddTicks(9389), "331", 1L });
-
-            migrationBuilder.InsertData(
+            migrationBuilder.CreateIndex(
+                name: "IX_PaymentStates_PaymentId",
                 table: "PaymentStates",
-                columns: new[] { "Id", "PaymentId", "CreationTime", "Status" },
-                values: new object[] { 1L, 1L, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Processed" });
+                column: "PaymentId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

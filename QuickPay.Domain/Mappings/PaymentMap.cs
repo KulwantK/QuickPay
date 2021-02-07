@@ -16,9 +16,8 @@ namespace QuickPay.Domain.Mappings
             builder.Property(x => x.ExpirationDate).IsRequired();
             builder.Property(x => x.SecurityCode);
             builder.Property(x => x.Amount).IsRequired();
-            builder.Property(x => x.StateId).IsRequired();
             builder.Property(x => x.CreationTime).HasDefaultValue(DateTime.Now);
-            builder.HasMany(x => x.States);
+            builder.HasOne(x => x.State);
         }
     }
 }

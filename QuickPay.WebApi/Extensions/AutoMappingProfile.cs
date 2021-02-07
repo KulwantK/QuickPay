@@ -10,6 +10,8 @@ namespace QuickPay.WebApi.Extensions
         {
             CreateMap<PaymentResponseModel, PaymentDto>().ReverseMap();
             CreateMap<Payment, PaymentDto>().ReverseMap();
+            CreateMap<PaymentState, PaymentStateDto>().ReverseMap();
+            CreateMap<Payment, PaymentResponseModel>().ReverseMap();
         }
     }
 }

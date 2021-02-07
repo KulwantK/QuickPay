@@ -5,7 +5,7 @@ namespace QuickPay.WebApi.IService
 {
     public interface IPaymentProcessService
     {
-        bool IsValidRequest(PaymentResponseModel paymentResponse);
+        bool IsValidRequest(PaymentResponseModel responseModel);
         Task<PaymentResponseModel> ProcessPayment(PaymentDto payemntDto);
     }
 }

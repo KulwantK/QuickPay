@@ -15,11 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickPay.EfCore", "QuickPay
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickPay.Repository", "QuickPay.Repository\QuickPay.Repository.csproj", "{F0CABF29-8BAC-4C5F-93CB-B18C5CC5AD80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickPay.WebApi", "QuickPay.WebApi\QuickPay.WebApi.csproj", "{B00425A6-0C79-442D-B606-1D5843E8F601}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickPay.WebApi", "QuickPay.WebApi\QuickPay.WebApi.csproj", "{B00425A6-0C79-442D-B606-1D5843E8F601}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{B31B230E-D7E3-4DD0-B666-FE181874B682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickPay.Common", "QuickPay.Common\QuickPay.Common.csproj", "{B11819DC-C0F2-4C22-A5F8-38D2515D77E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickPay.Common", "QuickPay.Common\QuickPay.Common.csproj", "{B11819DC-C0F2-4C22-A5F8-38D2515D77E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{E0AE120E-8A26-4217-9062-7DC36F3D8EE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickPay.UnitTest", "QuickPay.UnitTest\QuickPay.UnitTest.csproj", "{EE436EFB-D680-4CED-8468-E495F186ED2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,10 @@ Global
 		{B11819DC-C0F2-4C22-A5F8-38D2515D77E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B11819DC-C0F2-4C22-A5F8-38D2515D77E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B11819DC-C0F2-4C22-A5F8-38D2515D77E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE436EFB-D680-4CED-8468-E495F186ED2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE436EFB-D680-4CED-8468-E495F186ED2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE436EFB-D680-4CED-8468-E495F186ED2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE436EFB-D680-4CED-8468-E495F186ED2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +65,7 @@ Global
 		{F0CABF29-8BAC-4C5F-93CB-B18C5CC5AD80} = {1A9491F2-A83D-4029-AD6F-0602477CC026}
 		{B00425A6-0C79-442D-B606-1D5843E8F601} = {93316939-907C-4959-80EE-56499C720953}
 		{B11819DC-C0F2-4C22-A5F8-38D2515D77E0} = {B31B230E-D7E3-4DD0-B666-FE181874B682}
+		{EE436EFB-D680-4CED-8468-E495F186ED2F} = {E0AE120E-8A26-4217-9062-7DC36F3D8EE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4F366AC-9C09-49A7-9247-F91A25924D26}

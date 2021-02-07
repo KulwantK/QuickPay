@@ -9,6 +9,9 @@ namespace QuickPay.WebApi.Extensions
         public static IServiceCollection AddEntityService(this IServiceCollection service)
         {
             service.AddScoped<IPaymentProcessService, PaymentProcessService>();
+            service.AddScoped<ICheapPaymentGateway, CheapPaymentGateway>();
+            service.AddScoped<IExpensivePaymentGateway, ExpensivePaymentGateway>();
+            service.AddScoped<IPremiumPaymentService, PremiumPaymentService>();
             return service;
         }
     }
