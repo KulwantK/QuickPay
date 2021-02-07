@@ -31,7 +31,7 @@ namespace QuickPay.WebApi.Controllers
         {
 
             var responseModel = mapper.Map<PaymentResponseModel>(payemntDto);
-            if (processService.IsValidRequest(responseModel)||payemntDto==null|| responseModel==null)
+            if (processService.IsValidRequest(responseModel))
                 return StatusCode(StatusCodes.Status400BadRequest, responseModel);
             try
             {
