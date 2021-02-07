@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using QuickPay.Domain.Entities;
 using QuickPay.Repository.IRepository;
 using QuickPay.WebApi.IService;

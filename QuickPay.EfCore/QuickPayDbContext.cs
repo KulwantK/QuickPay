@@ -24,7 +24,7 @@ namespace QuickPay.EfCore
         public QuickPayDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<QuickPayDbContext>();
-            optionsBuilder.UseSqlServer("Server=IN-DT-16962\\SQL2019;Database=QuickPay;User Id=civica; password=civica");
+            optionsBuilder.UseSqlServer("add you db connection info here !");
 
             return new QuickPayDbContext(optionsBuilder.Options);
         }
