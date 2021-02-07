@@ -1,5 +1,4 @@
-﻿using QuickPay.Common.Constants;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace QuickPay.WebApi.Models
@@ -17,7 +16,7 @@ namespace QuickPay.WebApi.Models
 
         public string SecurityCode { get; set; }
         public decimal Amount { get; set; }
-        public PaymentState PaymentState { get; set; }
+        public string Status { get; set; }
         public bool Success { get; set; }
         public string Message { get; set; }
         public List<string> Errors { get; set; }

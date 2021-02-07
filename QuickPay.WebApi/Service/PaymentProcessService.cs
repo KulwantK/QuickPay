@@ -61,7 +61,7 @@ namespace QuickPay.WebApi.Service
 
             var result1 = await repositoryService.Where(x => x.Id == 2);
 
-            var test = repositoryService.Table;
+            var test = repositoryService.Table.Include(x=>x.States);
             //var result =mapper.Map<PaymentDto>(await repositoryService.All());
             return mapper.Map<PaymentResponseModel>(new PaymentResponseModel());
         }

@@ -41,16 +41,16 @@ namespace QuickPay.EfCore.Migrations
                     b.Property<DateTime>("ExpirationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PaymentState")
-                        .HasColumnType("int");
-
                     b.Property<string>("SecurityCode")
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
+                    b.Property<long>("StateId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Payment");
+                    b.ToTable("Payments");
 
                     b.HasData(
                         new
@@ -60,10 +60,48 @@ namespace QuickPay.EfCore.Migrations
                             CardHolder = "James Smith",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreditCardNumber = "421-4453-999-301",
-                            ExpirationDate = new DateTime(2022, 2, 6, 12, 17, 50, 785, DateTimeKind.Local).AddTicks(6817),
-                            PaymentState = 1,
-                            SecurityCode = "331"
+                            ExpirationDate = new DateTime(2022, 2, 7, 10, 21, 54, 464, DateTimeKind.Local).AddTicks(9389),
+                            SecurityCode = "331",
+                            StateId = 1L
                         });
+                });
+
+            modelBuilder.Entity("QuickPay.Domain.Entities.Payment", b =>
+                {
+                    b.OwnsMany("QuickPay.Domain.Entities.PaymentState", "States", b1 =>
+                        {
+                            b1.Property<long>("PaymentId")
+                                .HasColumnType("bigint");
+
+                            b1.Property<long>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("bigint")
+                                .UseIdentityColumn();
+
+                            b1.Property<DateTime>("CreationTime")
+                                .HasColumnType("datetime2");
+
+                            b1.Property<string>("Status")
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.HasKey("PaymentId", "Id");
+
+                            b1.ToTable("PaymentStates");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PaymentId");
+
+                            b1.HasData(
+                                new
+                                {
+                                    PaymentId = 1L,
+                                    Id = 1L,
+                                    CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                                    Status = "Processed"
+                                });
+                        });
+
+                    b.Navigation("States");
                 });
 #pragma warning restore 612, 618
         }
