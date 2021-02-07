@@ -2,7 +2,7 @@
 
 .Net Core 5.0, WebApi, UnitOfWork,Repositry Pattern, Xunit Test
 
-Add DB Info int these files
+Add DB Info into these files
 ----------------------------------
 EfCore->QuickPay.EfCore->QuickPayDbContext.cs
 
